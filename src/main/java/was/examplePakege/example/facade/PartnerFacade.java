@@ -4,7 +4,7 @@ import org.springframework.transaction.annotation.Transactional;
 import was.examplePakege.examplenotification.domain.NotificationService;
 import was.examplePakege.example.domain.partner.PartnerCommand;
 import was.examplePakege.example.domain.partner.PartnerInfo;
-import was.examplePakege.example.domain.partner.PartnerService;
+import was.examplePakege.example.domain.partner.interfaces.PartnerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

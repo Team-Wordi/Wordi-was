@@ -2,7 +2,7 @@ package was.examplePakege.example.infrastructure.Store;
 
 import was.common.exception.InvalidParamException;
 import was.examplePakege.example.domain.partner.Partner;
-import was.examplePakege.example.domain.partner.PartnerStore;
+import was.examplePakege.example.domain.partner.interfaces.PartnerStore;
 import was.examplePakege.example.infrastructure.PartnerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

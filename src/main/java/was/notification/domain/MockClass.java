@@ -1,4 +1,4 @@
 package was.notification.domain;
 
-public class MockClass {
+public interface MockClass {
 }

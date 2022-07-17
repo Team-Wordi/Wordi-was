@@ -1,4 +1,4 @@
-package was.examplePakege.example.domain.partner;
+package was.examplePakege.example.domain.partner.exception;
 
 import was.common.exception.BaseException;
 import was.common.response.ErrorCode;
