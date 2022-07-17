@@ -1,7 +1,7 @@
 package was.examplePakege.example.facade;
 
 import org.springframework.transaction.annotation.Transactional;
-import was.examplePakege.examplenotification.application.NotificationService;
+import was.examplePakege.examplenotification.domain.NotificationService;
 import was.examplePakege.example.domain.partner.PartnerCommand;
 import was.examplePakege.example.domain.partner.PartnerInfo;
 import was.examplePakege.example.domain.partner.PartnerService;
