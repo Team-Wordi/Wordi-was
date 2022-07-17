@@ -1,6 +1,6 @@
-package was.notification.infrastructure;
+package was.examplePakege.examplenotification.infrastructure;
 
-import was.notification.application.NotificationService;
+import was.examplePakege.examplenotification.application.NotificationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

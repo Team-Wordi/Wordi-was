@@ -1,9 +1,9 @@
-package was.example.infrastructure.Read;
+package was.examplePakege.example.infrastructure.Read;
 
 import was.common.exception.EntityNotFoundException;
-import was.example.domain.Partner;
-import was.example.domain.PartnerReader;
-import was.example.infrastructure.PartnerRepository;
+import was.examplePakege.example.domain.partner.Partner;
+import was.examplePakege.example.domain.partner.PartnerReader;
+import was.examplePakege.example.infrastructure.PartnerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

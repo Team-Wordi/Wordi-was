@@ -1,10 +1,10 @@
-package was.example.application;
+package was.examplePakege.example.application;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import was.example.domain.*;
+import was.examplePakege.example.domain.partner.*;
 
 @Slf4j
 @Service

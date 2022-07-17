@@ -1,9 +1,9 @@
-package was.example.interfaces.response;
+package was.examplePakege.example.interfaces.response;
 
 import lombok.Getter;
 import lombok.ToString;
-import was.example.domain.Partner;
-import was.example.domain.PartnerInfo;
+import was.examplePakege.example.domain.partner.Partner;
+import was.examplePakege.example.domain.partner.PartnerInfo;
 
 @Getter
 @ToString

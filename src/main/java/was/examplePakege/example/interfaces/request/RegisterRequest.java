@@ -1,9 +1,9 @@
-package was.example.interfaces.request;
+package was.examplePakege.example.interfaces.request;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import was.example.domain.PartnerCommand;
+import was.examplePakege.example.domain.partner.PartnerCommand;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

@@ -1,4 +1,4 @@
-package was.example.domain;
+package was.examplePakege.example.domain.partner;
 
 public interface PartnerReader {
     Partner getPartner(Long partnerId);

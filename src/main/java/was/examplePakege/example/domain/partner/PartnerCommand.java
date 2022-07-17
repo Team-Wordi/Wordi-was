@@ -1,4 +1,4 @@
-package was.example.domain;
+package was.examplePakege.example.domain.partner;
 
 import lombok.Builder;
 import lombok.Getter;

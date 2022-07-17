@@ -1,6 +1,6 @@
-package was.example.infrastructure;
+package was.examplePakege.example.infrastructure;
 
-import was.example.domain.Partner;
+import was.examplePakege.example.domain.partner.Partner;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

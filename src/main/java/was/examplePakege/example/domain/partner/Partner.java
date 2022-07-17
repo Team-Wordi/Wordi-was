@@ -1,4 +1,4 @@
-package was.example.domain;
+package was.examplePakege.example.domain.partner;
 
 import was.common.exception.InvalidParamException;
 import was.common.util.TokenGenerator;
