@@ -5,14 +5,23 @@ spring:
   lifecycle:
     timeout-per-shutdown-phase: 20s
   jpa:
-    show-sql: true
-    #    database-platform: mysql
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
+        dialect: org.hibernate.dialect.MySQLMyISAMDialect #방언 설정 참고: https://dololak.tistory.com/465, https://gigas-blog.tistory.com/119
+        use_sql_comments: true #디버깅이 용이하도록 SQL문 이외에 추가적인 정보를 출력
+        show_sql: true #하이버네이트가 실행하는 모든 SQL문을 콘솔로 출력
+        default_batch_fetch_size: 1000 # 최적화 옵션
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        use-new-id-generator-mappings: false # 키 생성 설정. https://devjem.tistory.com/40
+      properties:
+        hibernate.enable_lazy_load_no_trans: true # lazy_loading을 사용
+        hibernate.format_sql: true #콘솔에 출력되는 JPA 실행 쿼리를 가독성있게 표현
+
   datasource:
     hikari:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://localhost:9876/wordi?serverTimezone=UTC&characterEncoding=UTF-8
+      jdbc-url: jdbc:mysql://localhost:9876/wordi?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
       username: root
       password: password
 
