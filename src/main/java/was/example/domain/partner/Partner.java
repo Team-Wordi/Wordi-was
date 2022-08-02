@@ -2,7 +2,7 @@ package was.example.domain.partner;
 
 import was.common.exception.InvalidParamException;
 import was.common.util.TokenGenerator;
-import was.common.AbstractEntity;
+import was.example.AbstractEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
