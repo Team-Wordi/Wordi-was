@@ -33,7 +33,7 @@ public class Mentoring extends BaseTimeEntity {
     @Column(nullable = false)
     private Long price;
 
-    private String questions;
+    private String text;
 
     @Column(nullable = false)
     private LocalDateTime requestSchedule1;
@@ -45,19 +45,20 @@ public class Mentoring extends BaseTimeEntity {
     private String refusalMessage;
 
     @Enumerated(EnumType.STRING)
-    private MentoringProcess processed;
+    private MentoringProcess status;
 
-    @Enumerated(EnumType.STRING)
-    private BaseStatus status;
+    // 해당 값은 MentoringProcess로 관리되면 좋을 것 같습니다.
+//    @Enumerated(EnumType.STRING)
+//    private BaseStatus status;
 
     @Getter
     @AllArgsConstructor
     public enum MentoringProcess {
-        WAIT("대기중"),
-        CANCEL("취소"),
-        DECISION("확정"),
-        REFUSAL("거절"),
-        COMPLETION("완료");
+        WAITED("대기중"),
+        CANCELED("취소"),
+        DECISIONED("확정"),
+        REFUELED("거절"),
+        COMPLETED("완료");
 
         private final String value;
     }

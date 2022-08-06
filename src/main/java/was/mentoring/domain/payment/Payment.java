@@ -1,4 +1,4 @@
-package was.mentoring.domain.mentoring;
+package was.mentoring.domain.payment;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
+import was.mentoring.domain.mentoring.Mentoring;
 import was.user.domain.user.User;
 
 import javax.persistence.*;
@@ -28,6 +29,7 @@ public class Payment extends BaseTimeEntity {
     @JoinColumn(name = "userId")
     private User user;
 
+    // 어떤 용도?
     @Column(nullable = false, unique = true)
     private String orderNumber;
 
@@ -43,16 +45,18 @@ public class Payment extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private PaymentProcess paymentStatus;
 
+    // 해당 값은 필요없는것으로 보입니다.
     @Enumerated(EnumType.STRING)
     private BaseStatus status;
 
     @Getter
     @AllArgsConstructor
     public enum PaymentProcess {
-        WAIT("대기"),
-        COMPLETION("완료"),
-        CANCEL("취소"),
-        REFUND("환불");
+        WAITED("대기"),
+        COMPLETED("완료"),
+        CANCELED("취소"),
+        REFUNDED("환불");
+        // 취소와 환불은 같은개념이자 않나요?
 
         private final String value;
     }
