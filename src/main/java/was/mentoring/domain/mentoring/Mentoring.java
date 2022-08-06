@@ -1,11 +1,11 @@
 package was.mentoring.domain.mentoring;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
-import was.common.entity.MentoringProcess;
 import was.user.domain.mentor.Mentor;
 import was.user.domain.user.User;
 
@@ -50,5 +50,16 @@ public class Mentoring extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private BaseStatus status;
 
+    @Getter
+    @AllArgsConstructor
+    public enum MentoringProcess {
+        WAIT("대기중"),
+        CANCEL("취소"),
+        DECISION("확정"),
+        REFUSAL("거절"),
+        COMPLETION("완료");
+
+        private final String value;
+    }
 
 }

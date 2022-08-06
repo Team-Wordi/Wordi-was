@@ -2,11 +2,11 @@ package was.user.domain.user;
 
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
-import was.common.entity.UserRole;
 
 import javax.persistence.*;
 
@@ -52,5 +52,17 @@ public class User extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private BaseStatus status;
 
+    @Getter
+    @AllArgsConstructor
+    public enum UserRole {
+        NORMAL("일반"),
+        ADMIN("관리자"),
+        DORMANT("휴먼"),
+        SUSPENDED("정지");
+
+        private final String value;
+    }
 
 }
+
+

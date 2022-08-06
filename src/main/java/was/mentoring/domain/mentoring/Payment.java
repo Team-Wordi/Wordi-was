@@ -1,11 +1,11 @@
 package was.mentoring.domain.mentoring;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
-import was.common.entity.PaymentProcess;
 import was.user.domain.user.User;
 
 import javax.persistence.*;
@@ -46,5 +46,15 @@ public class Payment extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private BaseStatus status;
 
+    @Getter
+    @AllArgsConstructor
+    public enum PaymentProcess {
+        WAIT("대기"),
+        COMPLETION("완료"),
+        CANCEL("취소"),
+        REFUND("환불");
+
+        private final String value;
+    }
 
 }

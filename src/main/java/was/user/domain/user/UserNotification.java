@@ -1,11 +1,11 @@
 package was.user.domain.user;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
-import was.common.entity.NoticeClassification;
 
 import javax.persistence.*;
 
@@ -31,4 +31,13 @@ public class UserNotification extends BaseTimeEntity {
 
     @Enumerated(EnumType.STRING)
     private BaseStatus status;
+
+    @Getter
+    @AllArgsConstructor
+    public enum NoticeClassification {
+        USER("유저"),
+        MENTOR("멘토");
+
+        private final String value;
+    }
 }

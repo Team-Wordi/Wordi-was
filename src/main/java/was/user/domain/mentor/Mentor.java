@@ -1,11 +1,11 @@
 package was.user.domain.mentor;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
-import was.common.entity.MentorRole;
 import was.user.domain.user.User;
 
 import javax.persistence.*;
@@ -68,5 +68,14 @@ public class Mentor extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private BaseStatus status;
 
+    @Getter
+    @AllArgsConstructor
+    public enum MentorRole {
+        CERTIFIED("인증"),
+        UNCERTIFIED("비인증");
+
+        private final String value;
+
+    }
 
 }
