@@ -20,7 +20,7 @@ public class Mentor extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "mentorId")
-    private Long id;
+    private MentorId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId")
