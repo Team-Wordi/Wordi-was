@@ -9,6 +9,7 @@ import was.mentoring.domain.mentoring.MentoringId;
 import was.mentoring.domain.mentoring.interfaces.MentoringRead;
 import was.mentoring.domain.mentoring.interfaces.MentoringStore;
 import was.mentoring.domain.mentoring.interfaces.MentoringService;
+import was.mentoring.exception.MentoringNotFoundException;
 import was.user.domain.mentor.Mentor;
 import was.user.domain.mentor.MentorId;
 import was.user.domain.user.User;
@@ -45,29 +46,29 @@ public class MentoringServiceImpl implements MentoringService {
     }
 
     @Override
-    public void approved(UserId userId, MentoringId mentoringId, LocalDateTime selectedDateTime) throws Exception {
-        Mentoring mentoring = mentoringRead.findById(mentoringId).orElseThrow(Exception::new);
+    public void approved(UserId userId, MentoringId mentoringId, LocalDateTime selectedDateTime) {
+        Mentoring mentoring = mentoringRead.findById(mentoringId).orElseThrow(MentoringNotFoundException::new);
         mentoring.approved(selectedDateTime);
         mentoringStore.save(mentoring);
     }
 
     @Override
-    public void reject(UserId userId, MentoringId mentoringId, String message) throws Exception {
-        Mentoring mentoring = mentoringRead.findById(mentoringId).orElseThrow(Exception::new);
+    public void reject(UserId userId, MentoringId mentoringId, String message) {
+        Mentoring mentoring = mentoringRead.findById(mentoringId).orElseThrow(MentoringNotFoundException::new);
         mentoring.canceled(message);
         mentoringStore.save(mentoring);
     }
 
     @Override
-    public void cancel(UserId userId, MentoringId mentoringId) throws Exception {
-        Mentoring mentoring = mentoringRead.findById(mentoringId).orElseThrow(Exception::new);
+    public void cancel(UserId userId, MentoringId mentoringId) {
+        Mentoring mentoring = mentoringRead.findById(mentoringId).orElseThrow(MentoringNotFoundException::new);
         mentoring.canceled(null);
         mentoringStore.save(mentoring);
     }
 
     @Override
-    public void complete(MentoringId mentoringId) throws Exception {
-        Mentoring mentoring = mentoringRead.findById(mentoringId).orElseThrow(Exception::new);
+    public void complete(MentoringId mentoringId) {
+        Mentoring mentoring = mentoringRead.findById(mentoringId).orElseThrow(MentoringNotFoundException::new);
         mentoring.completed();
         mentoringStore.save(mentoring);
     }
