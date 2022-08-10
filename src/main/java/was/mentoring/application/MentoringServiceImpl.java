@@ -30,19 +30,19 @@ public class MentoringServiceImpl implements MentoringService {
     @Override
     @Transactional
     public void apply(UserId userId, MentorId mentorId, long price, String text, LocalDateTime requestSchedule1, LocalDateTime requestSchedule2) {
-        // User 조회
-        // 멘토 조회
-        Optional<Mentoring> mentoring = mentoringRead.findByMentorIdAndUserId(new Mentor(), new User());
-        if(mentoring.isEmpty()) {
-            mentoringStore.save(Mentoring.newOne(
-                    new User(),
-                    new Mentor(),
-                    price,
-                    text,
-                    requestSchedule1,
-                    requestSchedule2
-            ));
-        }
+//        // User 조회
+//        // 멘토 조회
+//        Optional<Mentoring> mentoring = mentoringRead.findByMentorIdAndUserId(new Mentor(), new User());
+//        if(mentoring.isEmpty()) {
+//            mentoringStore.save(Mentoring.newOne(
+//                    new User(),
+//                    new Mentor(),
+//                    price,
+//                    text,
+//                    requestSchedule1,
+//                    requestSchedule2
+//            ));
+//        }
     }
 
     @Override

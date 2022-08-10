@@ -1,11 +1,13 @@
 package was.mentoring.interfaces;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import was.common.response.CommonResponse;
 import was.mentoring.domain.mentoring.MentoringId;
+import was.mentoring.domain.mentoring.interfaces.MentoringRead;
 import was.mentoring.facade.MentoringFacade;
 import was.mentoring.interfaces.request.MentoringApplyRequest;
 import was.mentoring.interfaces.request.MentoringApprovedRequest;
@@ -23,6 +25,21 @@ import java.time.LocalDateTime;
 public class MentoringController {
 
     private final MentoringFacade mentoringFacade;
+    private final MentoringRead mentoringRead;
+
+    @GetMapping("/list")
+    @Transactional
+    public CommonResponse list(@RequestParam long userId,
+                               @RequestParam boolean sorted){
+        //멘토 찾기
+        return CommonResponse.success(mentoringRead.findAllByMentorId(new MentorId(1L), sorted));
+    }
+
+    @GetMapping("/list/{id}")
+    @Transactional
+    public CommonResponse getPost(@RequestParam long userId, @PathVariable String id) {
+        return CommonResponse.success(null);
+    }
 
     @PostMapping("")
     @Transactional
