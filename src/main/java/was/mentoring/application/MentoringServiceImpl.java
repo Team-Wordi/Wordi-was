@@ -64,4 +64,11 @@ public class MentoringServiceImpl implements MentoringService {
         mentoring.canceled(null);
         mentoringStore.save(mentoring);
     }
+
+    @Override
+    public void complete(MentoringId mentoringId) throws Exception {
+        Mentoring mentoring = mentoringRead.findById(mentoringId).orElseThrow(Exception::new);
+        mentoring.completed();
+        mentoringStore.save(mentoring);
+    }
 }

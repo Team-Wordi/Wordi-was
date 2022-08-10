@@ -32,18 +32,24 @@ public class MentoringFacade {
     public void approved(UserId userId, MentoringId mentoringId, LocalDateTime selectedDateTime) throws Exception {
         mentoringService.approved(userId, mentoringId, selectedDateTime);
         //todo 추후 firebase Notification 개발 완료시 변경 예정 + Event Driven 교체 필요
-        notificationService.sendEmail("userEmail", "멘토링 승락", "***님과 멘토링이 매칭되었습니다.");
+        notificationService.sendEmail("userEmail", "멘토링 승락", "***님과의 멘토링이 매칭되었습니다.");
     }
 
     public void reject(UserId userId, MentoringId mentoringId, String message) throws Exception {
         mentoringService.reject(userId, mentoringId, message);
         //todo 추후 firebase Notification 개발 완료시 변경 예정 + Event Driven 교체 필요
-        notificationService.sendEmail("userEmail", "멘토링 거절", "***님과 멘토링이 거절 되었습니다..");
+        notificationService.sendEmail("userEmail", "멘토링 거절", "***님과의 멘토링이 거절 되었습니다..");
     }
 
     public void cancel(UserId userId, MentoringId mentoringId) throws Exception {
         mentoringService.cancel(userId, mentoringId);
         //todo 추후 firebase Notification 개발 완료시 변경 예정 + Event Driven 교체 필요
-        notificationService.sendEmail("userEmail", "멘토링 예약 취소", "***님과 멘토링이 예약취소 되었습니다..");
+        notificationService.sendEmail("userEmail", "멘토링 예약 취소", "***님과의 멘토링이 예약취소 되었습니다..");
+    }
+
+    public void completed(MentoringId mentoringId) throws Exception {
+        mentoringService.complete(mentoringId);
+        //todo 추후 firebase Notification 개발 완료시 변경 예정 + Event Driven 교체 필요
+        notificationService.sendEmail("userEmail", "멘토링 거래 완료", "***님과의 멘토링이 완료되었습니다.");
     }
 }

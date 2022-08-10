@@ -12,4 +12,5 @@ public interface MentoringService {
     void approved(UserId userId, MentoringId mentoringId, LocalDateTime selectedDateTime) throws Exception;
     void reject(UserId userId, MentoringId mentoringId, String message) throws Exception;
     void cancel(UserId userId, MentoringId mentoringId) throws Exception;
+    void complete(MentoringId mentoringId) throws Exception;
 }
