@@ -33,7 +33,7 @@ public class Mentoring extends BaseTimeEntity {
     @Column(nullable = false)
     private Long price;
 
-    private String text;
+    private String questions;
 
     @Column(nullable = false)
     private LocalDateTime requestSchedule1;
@@ -45,11 +45,10 @@ public class Mentoring extends BaseTimeEntity {
     private String refusalMessage;
 
     @Enumerated(EnumType.STRING)
-    private MentoringProcess status;
+    private MentoringProcess processStatus;
 
-    // 해당 값은 MentoringProcess로 관리되면 좋을 것 같습니다.
-//    @Enumerated(EnumType.STRING)
-//    private BaseStatus status;
+    @Enumerated(EnumType.STRING)
+    private BaseStatus status;
 
     @Getter
     @AllArgsConstructor

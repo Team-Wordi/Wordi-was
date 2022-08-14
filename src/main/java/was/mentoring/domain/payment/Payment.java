@@ -29,7 +29,6 @@ public class Payment extends BaseTimeEntity {
     @JoinColumn(name = "userId")
     private User user;
 
-    // 어떤 용도?
     @Column(nullable = false, unique = true)
     private String orderNumber;
 
@@ -44,8 +43,7 @@ public class Payment extends BaseTimeEntity {
 
     @Enumerated(EnumType.STRING)
     private PaymentProcess paymentStatus;
-
-    // 해당 값은 필요없는것으로 보입니다.
+    
     @Enumerated(EnumType.STRING)
     private BaseStatus status;
 
