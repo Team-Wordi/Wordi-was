@@ -3,10 +3,10 @@ package was.user.domain.user;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -27,6 +27,6 @@ public class UserNotificationEnable extends BaseTimeEntity {
     @Column(nullable = false)
     private boolean event;
 
-    @Enumerated(EnumType.STRING)
-    private BaseStatus status;
+    @Column(columnDefinition = "DATETIME(3)")
+    private LocalDateTime deletedAt;
 }

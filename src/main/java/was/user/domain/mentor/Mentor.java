@@ -4,12 +4,12 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
 import was.user.domain.user.User;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -65,8 +65,8 @@ public class Mentor extends BaseTimeEntity {
 
     private String keywords;
 
-    @Enumerated(EnumType.STRING)
-    private BaseStatus status;
+    @Column(columnDefinition = "DATETIME(3)")
+    private LocalDateTime deletedAt;
 
     @Getter
     @AllArgsConstructor

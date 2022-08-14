@@ -1,11 +1,11 @@
 package was.user.domain.mentor;
 
 
-import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
 import was.user.domain.user.User;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 public class MentorScore extends BaseTimeEntity {
 
@@ -25,7 +25,7 @@ public class MentorScore extends BaseTimeEntity {
     @Column(nullable = false)
     private Integer score;
 
-    @Enumerated(EnumType.STRING)
-    private BaseStatus status;
+    @Column(columnDefinition = "DATETIME(3)")
+    private LocalDateTime deletedAt;
 
 }

@@ -4,7 +4,6 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
 import was.user.domain.mentor.Mentor;
 import was.user.domain.user.User;
@@ -47,8 +46,8 @@ public class Mentoring extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private MentoringProcess processStatus;
 
-    @Enumerated(EnumType.STRING)
-    private BaseStatus status;
+    @Column(columnDefinition = "DATETIME(3)")
+    private LocalDateTime deletedAt;
 
     @Getter
     @AllArgsConstructor
