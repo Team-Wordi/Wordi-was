@@ -7,9 +7,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import was.mentoring.domain.mentoring.Mentoring;
 import was.mentoring.domain.mentoring.MentoringId;
+import was.mentoring.domain.mentoring.QMentoring;
 import was.mentoring.domain.mentoring.interfaces.MentoringRead;
 import was.mentoring.infrastructure.MentoringJpaRepository;
 import was.mentoring.interfaces.model.MentoringListVO;
+import was.mentoring.interfaces.model.QMentoringListVO;
 import was.mentoring.interfaces.response.MentoringListResponse;
 import was.user.domain.mentor.Mentor;
 import was.user.domain.mentor.MentorId;
@@ -18,6 +20,8 @@ import was.user.domain.user.User;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import static was.mentoring.domain.mentoring.QMentoring.mentoring;
 
 
 @Transactional(readOnly = true)
