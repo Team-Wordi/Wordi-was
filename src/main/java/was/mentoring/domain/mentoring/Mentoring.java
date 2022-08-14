@@ -46,7 +46,7 @@ public class Mentoring extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private MentoringProcess processStatus;
 
-    @Column(columnDefinition = "DATETIME(3)")
+    @Column
     private LocalDateTime deletedAt;
 
     @Getter

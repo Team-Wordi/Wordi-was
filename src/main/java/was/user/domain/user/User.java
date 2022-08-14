@@ -49,7 +49,7 @@ public class User extends BaseTimeEntity {
 
     private String keywords;
 
-    @Column(columnDefinition = "DATETIME(3)")
+    @Column
     private LocalDateTime deletedAt;
 
     @Getter

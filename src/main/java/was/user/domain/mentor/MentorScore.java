@@ -25,7 +25,7 @@ public class MentorScore extends BaseTimeEntity {
     @Column(nullable = false)
     private Integer score;
 
-    @Column(columnDefinition = "DATETIME(3)")
+    @Column
     private LocalDateTime deletedAt;
 
 }

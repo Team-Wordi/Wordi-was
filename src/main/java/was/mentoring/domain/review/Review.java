@@ -35,6 +35,6 @@ public class Review extends BaseTimeEntity {
     @Column(nullable = false)
     private String content;
 
-    @Column(columnDefinition = "DATETIME(3)")
+    @Column
     private LocalDateTime deletedAt;
 }

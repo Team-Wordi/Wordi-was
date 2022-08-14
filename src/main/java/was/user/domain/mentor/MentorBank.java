@@ -31,6 +31,6 @@ public class MentorBank extends BaseTimeEntity {
     @Column(nullable = false)
     private String depositor;
 
-    @Column(columnDefinition = "DATETIME(3)")
+    @Column
     private LocalDateTime deletedAt;
 }

@@ -27,6 +27,6 @@ public class UserNotificationEnable extends BaseTimeEntity {
     @Column(nullable = false)
     private boolean event;
 
-    @Column(columnDefinition = "DATETIME(3)")
+    @Column
     private LocalDateTime deletedAt;
 }

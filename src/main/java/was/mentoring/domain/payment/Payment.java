@@ -44,7 +44,7 @@ public class Payment extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     private PaymentProcess paymentStatus;
 
-    @Column(columnDefinition = "DATETIME(3)")
+    @Column
     private LocalDateTime deletedAt;
 
     @Getter

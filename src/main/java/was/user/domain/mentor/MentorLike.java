@@ -21,7 +21,7 @@ public class MentorLike extends BaseTimeEntity {
     @Column(name = "mentorId")
     private Mentor mentor;
 
-    @Column(columnDefinition = "DATETIME(3)")
+    @Column
     private LocalDateTime deletedAt;
 
 }
