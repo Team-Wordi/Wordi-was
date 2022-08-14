@@ -45,7 +45,7 @@ public class Mentoring extends BaseTimeEntity {
     private String refusalMessage;
 
     @Enumerated(EnumType.STRING)
-    private MentoringProcess processed;
+    private MentoringProcess processStatus;
 
     @Enumerated(EnumType.STRING)
     private BaseStatus status;
@@ -53,11 +53,11 @@ public class Mentoring extends BaseTimeEntity {
     @Getter
     @AllArgsConstructor
     public enum MentoringProcess {
-        WAIT("대기중"),
-        CANCEL("취소"),
-        DECISION("확정"),
-        REFUSAL("거절"),
-        COMPLETION("완료");
+        WAITED("대기중"),
+        CANCELED("취소"),
+        DECISIONED("확정"),
+        REFUELED("거절"),
+        COMPLETED("완료");
 
         private final String value;
     }
