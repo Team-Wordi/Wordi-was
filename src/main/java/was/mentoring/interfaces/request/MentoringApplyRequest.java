@@ -13,7 +13,7 @@ public class MentoringApplyRequest {
 
     private long mentorId;
     private long price;
-    private String text;
+    private String questions;
     private LocalDateTime requestSchedule1;
     private LocalDateTime requestSchedule2;
 }

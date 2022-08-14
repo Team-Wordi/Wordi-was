@@ -23,8 +23,8 @@ public class MentoringFacade {
     public final MentoringService mentoringService;
     public final NotificationService notificationService;
 
-    public void apply(MentorId mentorId, UserId userId, long price, String text, LocalDateTime requestSchedule1, LocalDateTime requestSchedule2) {
-        mentoringService.apply(userId, mentorId, price, text, requestSchedule1, requestSchedule2);
+    public void apply(MentorId mentorId, UserId userId, long price, String questions, LocalDateTime requestSchedule1, LocalDateTime requestSchedule2) {
+        mentoringService.apply(userId, mentorId, price, questions, requestSchedule1, requestSchedule2);
         //todo 추후 firebase Notification 개발 완료시 변경 예정 + Event Driven 교체 필요
         notificationService.sendEmail("userEmail", "멘토링 신청", "***님이 멘토링 신청을 하였습니다.");
     }

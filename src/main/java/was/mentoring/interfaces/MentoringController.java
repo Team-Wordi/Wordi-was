@@ -50,7 +50,7 @@ public class MentoringController {
                 new MentorId(mentoringApplyRequest.getMentorId()),
                 new UserId(userId),
                 mentoringApplyRequest.getPrice(),
-                mentoringApplyRequest.getText(),
+                mentoringApplyRequest.getQuestions(),
                 mentoringApplyRequest.getRequestSchedule1(),
                 mentoringApplyRequest.getRequestSchedule2()
                 );

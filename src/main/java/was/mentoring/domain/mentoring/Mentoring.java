@@ -32,7 +32,7 @@ public class Mentoring extends BaseTimeEntity {
     @Column(nullable = false)
     private Long price;
 
-    private String text;
+    private String questions;
 
     @Column(nullable = false)
     private LocalDateTime requestSchedule1;
@@ -61,11 +61,11 @@ public class Mentoring extends BaseTimeEntity {
         private final String value;
     }
 
-    public Mentoring(User user, Mentor mentor, Long price, String text, LocalDateTime requestSchedule1, LocalDateTime requestSchedule2, LocalDateTime selectedSchedule, String refusalMessage, MentoringProcess processStatus) {
+    public Mentoring(User user, Mentor mentor, Long price, String questions, LocalDateTime requestSchedule1, LocalDateTime requestSchedule2, LocalDateTime selectedSchedule, String refusalMessage, MentoringProcess processStatus) {
         this.user = user;
         this.mentor = mentor;
         this.price = price;
-        this.text = text;
+        this.questions = questions;
         this.requestSchedule1 = requestSchedule1;
         this.requestSchedule2 = requestSchedule2;
         this.selectedSchedule = selectedSchedule;
@@ -73,12 +73,12 @@ public class Mentoring extends BaseTimeEntity {
         this.processStatus = processStatus;
     }
 
-    public static Mentoring newOne(User user, Mentor mentor, Long price, String text, LocalDateTime requestSchedule1, LocalDateTime requestSchedule2) {
+    public static Mentoring newOne(User user, Mentor mentor, Long price, String questions, LocalDateTime requestSchedule1, LocalDateTime requestSchedule2) {
         return new Mentoring(
                 user,
                 mentor,
                 price,
-                text,
+                questions,
                 requestSchedule1,
                 requestSchedule2,
                 null,
