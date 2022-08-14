@@ -4,13 +4,12 @@ package was.mentoring.domain.review;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
 import was.mentoring.domain.mentoring.Mentoring;
-import was.user.domain.mentor.Mentor;
 import was.user.domain.user.User;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -36,8 +35,6 @@ public class Review extends BaseTimeEntity {
     @Column(nullable = false)
     private String content;
 
-    @Enumerated(EnumType.STRING)
-    private BaseStatus status;
-
-
+    @Column
+    private LocalDateTime deletedAt;
 }

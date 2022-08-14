@@ -5,10 +5,10 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 
 @Entity
@@ -36,7 +36,7 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private String nickname;
 
-    private String refreshToken;
+    private String accessToken;
 
     private String fcmToken;
 
@@ -49,8 +49,8 @@ public class User extends BaseTimeEntity {
 
     private String keywords;
 
-    @Enumerated(EnumType.STRING)
-    private BaseStatus status;
+    @Column
+    private LocalDateTime deletedAt;
 
     @Getter
     @AllArgsConstructor

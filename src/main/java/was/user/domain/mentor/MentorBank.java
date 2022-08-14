@@ -3,10 +3,10 @@ package was.user.domain.mentor;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -31,6 +31,6 @@ public class MentorBank extends BaseTimeEntity {
     @Column(nullable = false)
     private String depositor;
 
-    @Enumerated(EnumType.STRING)
-    private BaseStatus status;
+    @Column
+    private LocalDateTime deletedAt;
 }
