@@ -4,12 +4,12 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
 import was.mentoring.domain.mentoring.Mentoring;
 import was.user.domain.user.User;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -43,9 +43,9 @@ public class Payment extends BaseTimeEntity {
 
     @Enumerated(EnumType.STRING)
     private PaymentProcess paymentStatus;
-    
-    @Enumerated(EnumType.STRING)
-    private BaseStatus status;
+
+    @Column
+    private LocalDateTime deletedAt;
 
     @Getter
     @AllArgsConstructor
