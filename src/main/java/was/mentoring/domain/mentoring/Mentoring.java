@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import was.common.entity.BaseStatus;
 import was.common.entity.BaseTimeEntity;
 import was.user.domain.mentor.Mentor;
 import was.user.domain.user.User;
@@ -44,13 +45,16 @@ public class Mentoring extends BaseTimeEntity {
     private String refusalMessage;
 
     @Enumerated(EnumType.STRING)
-    private MentoringProcess status;
+    private MentoringProcess processStatus;
+
+    @Enumerated(EnumType.STRING)
+    private BaseStatus status;
 
     @Getter
     @AllArgsConstructor
     public enum MentoringProcess {
         WAITED("대기중"),
-        CANCELED("취소"), // 거절과 취소는 같은 맥락?
+        CANCELED("취소"),
         DECISIONED("확정"),
         REFUELED("거절"),
         COMPLETED("완료");
@@ -58,7 +62,7 @@ public class Mentoring extends BaseTimeEntity {
         private final String value;
     }
 
-    public Mentoring(User user, Mentor mentor, Long price, String text, LocalDateTime requestSchedule1, LocalDateTime requestSchedule2, LocalDateTime selectedSchedule, String refusalMessage, MentoringProcess status) {
+    public Mentoring(User user, Mentor mentor, Long price, String text, LocalDateTime requestSchedule1, LocalDateTime requestSchedule2, LocalDateTime selectedSchedule, String refusalMessage, MentoringProcess processStatus) {
         this.user = user;
         this.mentor = mentor;
         this.price = price;
@@ -67,7 +71,7 @@ public class Mentoring extends BaseTimeEntity {
         this.requestSchedule2 = requestSchedule2;
         this.selectedSchedule = selectedSchedule;
         this.refusalMessage = refusalMessage;
-        this.status = status;
+        this.processStatus = processStatus;
     }
 
     public static Mentoring newOne(User user, Mentor mentor, Long price, String text, LocalDateTime requestSchedule1, LocalDateTime requestSchedule2) {
@@ -85,17 +89,17 @@ public class Mentoring extends BaseTimeEntity {
     }
 
     public void approved(LocalDateTime selectedSchedule) {
-        this.status = MentoringProcess.DECISIONED;
+        this.processStatus = MentoringProcess.DECISIONED;
         this.selectedSchedule = selectedSchedule;
     }
 
     public void canceled(String refusalMessage) {
-        this.status = MentoringProcess.CANCELED;
+        this.processStatus = MentoringProcess.CANCELED;
         this.refusalMessage = refusalMessage;
     }
 
     public void completed() {
-        this.status = MentoringProcess.COMPLETED;
+        this.processStatus = MentoringProcess.COMPLETED;
     }
 
 }

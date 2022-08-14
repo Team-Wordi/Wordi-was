@@ -10,7 +10,6 @@ import was.mentoring.domain.mentoring.MentoringId;
 import was.mentoring.domain.mentoring.interfaces.MentoringRead;
 import was.mentoring.infrastructure.MentoringJpaRepository;
 import was.mentoring.interfaces.model.MentoringListVO;
-import was.mentoring.interfaces.model.QMentoringListVO;
 import was.mentoring.interfaces.response.MentoringListResponse;
 import was.user.domain.mentor.Mentor;
 import was.user.domain.mentor.MentorId;
@@ -19,8 +18,6 @@ import was.user.domain.user.User;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import static was.mentoring.domain.mentoring.QMentoring.mentoring;
 
 
 @Transactional(readOnly = true)
@@ -53,7 +50,7 @@ public class MentoringReadImpl implements MentoringRead {
         List<MentoringListVO> mentoringListVOS = jpaQueryFactory
                 .select(new QMentoringListVO(
                         mentoring.id,
-                        mentoring.status,
+                        mentoring.processStatus,
                         mentoring.requestSchedule1,
                         mentoring.selectedSchedule,
                         mentoring.user.id,
@@ -70,7 +67,7 @@ public class MentoringReadImpl implements MentoringRead {
         List<MentoringListVO> mentoringListVOS = jpaQueryFactory
                 .select(new QMentoringListVO(
                         mentoring.id,
-                        mentoring.status,
+                        mentoring.processStatus,
                         mentoring.requestSchedule1,
                         mentoring.selectedSchedule,
                         mentoring.user.id,

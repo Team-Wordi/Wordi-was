@@ -26,10 +26,6 @@ public class Review extends BaseTimeEntity {
     @JoinColumn(name = "userId")
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "mentorId")
-    private Mentor mentor;
-
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "mentoringId")
     private Mentoring mentoring;
