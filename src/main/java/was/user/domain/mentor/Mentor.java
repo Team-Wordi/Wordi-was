@@ -20,7 +20,7 @@ public class Mentor extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "mentorId")
-    private Long id;
+    private MentorId id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId")
@@ -78,4 +78,8 @@ public class Mentor extends BaseTimeEntity {
 
     }
 
+    // todo 컴파일 오류 방지를 위해 임시적으로 추가 추후 삭제 예정
+    public Mentor(MentorId id) {
+        this.id = id;
+    }
 }

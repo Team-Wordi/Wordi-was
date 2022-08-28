@@ -19,7 +19,7 @@ public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userId")
-    private Long id;
+    private UserId id;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -63,6 +63,10 @@ public class User extends BaseTimeEntity {
         private final String value;
     }
 
+    // todo 컴파일 오류 방지를 위해 임시적으로 추가 추후 삭제 예정
+    public User(UserId id) {
+        this.id = id;
+    }
 }
 
 
