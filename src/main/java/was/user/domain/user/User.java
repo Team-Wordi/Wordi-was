@@ -36,14 +36,20 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private String nickname;
 
+    private String refreshToken;
+
     private String accessToken;
 
     private String fcmToken;
 
-    private boolean isOAuth2;
+    @Enumerated(EnumType.STRING)
+    private LoginType loginType;
+
+    private String phoneModel;
 
     @Enumerated(EnumType.STRING)
     private UserRole role;
+
 
     private String likeNations;
 
@@ -61,6 +67,16 @@ public class User extends BaseTimeEntity {
         SUSPENDED("정지");
 
         private final String value;
+    }
+
+    @Getter
+    @AllArgsConstructor
+    public enum LoginType {
+        KAKAO("카카오"),
+        GOOGLE("구글"),
+        APPLE("애플");
+
+        private final String name;
     }
 
     // todo 컴파일 오류 방지를 위해 임시적으로 추가 추후 삭제 예정
